@@ -1,0 +1,67 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #E0F7FA; /* Lekki niebieski kolor */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Wysokość viewportu */
+  }
+  
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    flex: 1; /* Dostosowuje się do dostępnej przestrzeni, pozostawiając footer na dole */
+  }
+  
+  .dashboard > div {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  ul {
+    padding: 0;
+  }
+  
+  ul li {
+    list-style-type: none;
+    padding: 5px 0;
+  }
+  
+  .scrolling-text {
+    white-space: nowrap;
+    overflow: hidden;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    display: flex; /* Dla wyśrodkowania tekstu */
+    justify-content: center; /* Wyśrodkowuje tekst w poziomie */
+    min-height: 20px;
+  }
+  
+  .scrolling-text::after {
+    content: attr(data-text); /* Używa atrybutu data-text dla dynamicznego tekstu */
+    animation: scroll-text 3s linear infinite;
+    position: absolute;
+  }
+  
+  @keyframes scroll-text {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    background: #ddd;
+    padding: 10px 0;
+    width: 100%;
+  }
